@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PersonalManager.Data;
 
 namespace PersonalManager.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210419211040_addIssueTable")]
+    partial class addIssueTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,9 +23,6 @@ namespace PersonalManager.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
-
-                    b.Property<Guid?>("AssignedUserId")
-                        .HasColumnType("TEXT");
 
                     b.Property<Guid?>("AuthorId")
                         .HasColumnType("TEXT");
@@ -46,11 +45,14 @@ namespace PersonalManager.Migrations
                     b.Property<string>("Tittle")
                         .HasColumnType("TEXT");
 
+                    b.Property<Guid>("UserForeignKey")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("AssignedUserId");
-
                     b.HasIndex("AuthorId");
+
+                    b.HasIndex("UserForeignKey");
 
                     b.ToTable("Issue");
                 });
@@ -86,13 +88,15 @@ namespace PersonalManager.Migrations
 
             modelBuilder.Entity("PersonalManager.Data.Issue", b =>
                 {
-                    b.HasOne("PersonalManager.Data.User", "AssignedUser")
-                        .WithMany("Issues")
-                        .HasForeignKey("AssignedUserId");
-
                     b.HasOne("PersonalManager.Data.User", "Author")
                         .WithMany()
                         .HasForeignKey("AuthorId");
+
+                    b.HasOne("PersonalManager.Data.User", "AssignedUser")
+                        .WithMany("Issues")
+                        .HasForeignKey("UserForeignKey")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("AssignedUser");
 

@@ -11,20 +11,15 @@ using PersonalManager.Infrastructure.Enums;
 
 namespace PersonalManager.Data
 {
- [Table("Users")]
-    public class User:EntityBase
+    [Table("Users")]
+    public class User : EntityBase
     {
-        [Key]
-        [NotNull]
-        public int Id { get; set; }
-        [NotNull]
-        public string Login { get; set; }
-        [NotNull]
-        public string Password { get; set; }
-        [NotNull]
-        public Guid AccessToken { get; set; }
+        [NotNull] public string Login { get; set; }
+        [NotNull] public string Password { get; set; }
+        
+        [NotNull] public Guid AccessToken { get; set; }
         public UserRole Role { get; set; }
         public string DisplayName { get; set; }
-
+        public ICollection<Issue> Issues { get; set; }
     }
 }

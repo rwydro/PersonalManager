@@ -26,7 +26,7 @@ namespace PersonalManager.Controllers.User
             {
                 throw new UserExistException($"The login {command.Login} is occupied. Please enter another login");
             }
-            await dataContext.User.AddAsync(new Data.User(){Login = command.Login, Password = command.Password, AccessToken = Guid.NewGuid()});
+            await dataContext.User.AddAsync(new Data.User(){Login = command.Login, Password = command.Password});
             await dataContext.SaveChangesAsync();
             return new CreateUserCommandResult();
         }

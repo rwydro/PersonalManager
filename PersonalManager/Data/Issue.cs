@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using PersonalManager.Infrastructure.Enums;
 
 namespace PersonalManager.Data
@@ -16,6 +18,7 @@ namespace PersonalManager.Data
         [NotNull]
         public string Tittle { get; set; }
         public string Description { get; set; }
+ 
         [NotNull]
         public User Author { get; set; }
         [NotNull]
