@@ -64,3 +64,5 @@ _TeamCity*
 
 
 
+/PersonalManager/ClientApp/node_modules
+/PersonalManager/ClientApp/dist

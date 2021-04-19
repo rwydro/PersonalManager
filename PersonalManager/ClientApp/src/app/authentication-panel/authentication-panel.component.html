@@ -1,0 +1,32 @@
+
+
+<div class="authentication-container container-fluid">
+  <div class="row d-flex authentication-panel ">
+    <div class="col authentication-panel authentication-panel__login-column--left">
+      <div class="w-75 d-flex justify-content-center flex-column">
+        <h1 class="mb-4">Logowanie</h1>
+        <div class="mb-4">
+          <input class="form-control" aria-describedby="emailHelp" placeholder="login/email"
+               [(ngModel)]="login" (ngModelChange)="loginChange($event)">
+        </div>
+        <div class="mb-4">
+          <input type="password" class="form-control" placeholder="Password"
+               [(ngModel)]="password" (ngModelChange)="passwordChange($event)">
+        </div>
+        <button type="submit" class="btn btn-primary rounded-pill" (click)="onLoginClick()" >Zaloguj</button>
+        <div [hidden]="!showNotification" class="form-text">Niepoprawne dane użytkownika(sprawdź login i hasło)</div>
+      </div>
+    </div>
+    <div class="col authentication-panel authentication-panel__login-column--right d-flex justify-content-center flex-column"
+            [ngSwitch]="rightLoginPanelView">
+      <ng-container *ngSwitchCase="0">
+        <h1 class="mb-4">Załóż konto</h1>
+        <button type="submit" class="btn btn-primary rounded-pill"  (click)="onCreateAccountButtonClick()">Submit</button>
+      </ng-container>
+      <ng-container *ngSwitchCase="1">
+        <h1 class="mb-4">Użytkownik</h1>
+        <button type="submit" class="btn btn-primary rounded-pill" routerLink="/test" >Submit</button>
+      </ng-container>
+    </div>
+  </div>
+</div>
