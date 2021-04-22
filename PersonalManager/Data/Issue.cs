@@ -11,10 +11,7 @@ using PersonalManager.Infrastructure.Enums;
 namespace PersonalManager.Data
 {
     public class Issue: EntityBase
-    {
-        [Key]
-        [NotNull]
-        public int Id { get; set; }
+    { 
         [NotNull]
         public string Tittle { get; set; }
         public string Description { get; set; }

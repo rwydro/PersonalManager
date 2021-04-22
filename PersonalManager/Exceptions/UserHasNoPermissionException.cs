@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 
 namespace PersonalManager.Exceptions
 {
-    public class AuthenticationFailedException : Exception, IExceptionBase
+    public class UserHasNoPermissionException: Exception, IExceptionBase
     {
         public int Status { get; }
         public string Name { get; }
 
-        public AuthenticationFailedException(int status, string msg) : base(msg)
+        public UserHasNoPermissionException(int status, string msg) : base(msg)
         {
-            this.Status = status;
-            this.Name = "AuthenticationFailed";
+            Status = status;
+            Name = "UserHasNoPermission";
         }
     }
 }

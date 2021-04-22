@@ -17,7 +17,7 @@ namespace PersonalManager.Data
         [NotNull] public string Login { get; set; }
         [NotNull] public string Password { get; set; }
         
-        [NotNull] public Guid AccessToken { get; set; }
+        [NotNull] public Guid UserIdentifier { get; set; }
         public UserRole Role { get; set; }
         public string DisplayName { get; set; }
         public ICollection<Issue> Issues { get; set; }
