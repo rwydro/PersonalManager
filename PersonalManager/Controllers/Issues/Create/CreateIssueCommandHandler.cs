@@ -13,12 +13,12 @@ namespace PersonalManager.Controllers.Issues.Create
     public class CreateIssueCommandCommandHandler : ICommandHandler<CreateIssueCommand, CreateIssueCommandResult>
     {
         private IDataContextProvider dataContextProvider;
-        private ITaskHub taskHub;
+        private ICallbackHub _callbackHub;
 
-        public CreateIssueCommandCommandHandler(IDataContextProvider dataContext, ITaskHub taskHub)
+        public CreateIssueCommandCommandHandler(IDataContextProvider dataContext, ICallbackHub callbackHub)
         {
             this.dataContextProvider = dataContext;
-            this.taskHub = taskHub;
+            this._callbackHub = callbackHub;
         }
 
 
@@ -44,7 +44,7 @@ namespace PersonalManager.Controllers.Issues.Create
                 State = IssueState.Open
             });
             await dataContext.SaveChangesAsync();
-            await taskHub.NotifyTaskCreated(command.IssueAuthorIdentifier.ToString(),
+            await _callbackHub.NotifyTaskCreated(command.IssueAuthorIdentifier.ToString(),
                 "The issue was created successfully");
             return new CreateIssueCommandResult();
         }

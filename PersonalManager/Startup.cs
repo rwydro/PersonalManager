@@ -111,7 +111,7 @@ namespace PersonalManager
                     name: "default",  
                     pattern: "{controller}/{action=Index}/{id?}"
                     );
-                endpoints.MapHub<TaskHub>("/taskHub");
+                endpoints.MapHub<IssueHub>("/taskHub");
             });
             InitializeDatabase(app).Wait();
         }

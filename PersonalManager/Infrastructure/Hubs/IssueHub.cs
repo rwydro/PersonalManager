@@ -6,16 +6,16 @@ using Microsoft.AspNetCore.SignalR;
 
 namespace PersonalManager.Infrastructure.Hubs
 {
-    public interface ITaskHub
+    public interface ICallbackHub
     {
         Task NotifyTaskCreated(string userLogin, string message);
     }
 
-    public class Callbackhub : ITaskHub
+    public class CallbackHub : ICallbackHub
     {
-        private IHubContext<TaskHub> issueHub;
+        private IHubContext<IssueHub> issueHub;
 
-        public Callbackhub(IHubContext<TaskHub> issueHub)
+        public CallbackHub(IHubContext<IssueHub> issueHub)
         {
             this.issueHub = issueHub;
         }
@@ -26,16 +26,12 @@ namespace PersonalManager.Infrastructure.Hubs
         }
     }
 
-    public class TaskHub:Hub
+    public class IssueHub:Hub
     {
         public override Task OnConnectedAsync()
         {
             return base.OnConnectedAsync();
         }
 
-        // public async Task NotifyTaskCreated(string userLogin, string message)
-        // {
-        //     await Clients.All.SendAsync("IssueCreatedCallback", userLogin, message);
-        // }
     }
 }
