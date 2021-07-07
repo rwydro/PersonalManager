@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7136666c-b7b9-43d6-ada7-5a5bff08b673" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1rqK9jOiFJKuDgH1DsL6ql0GgLU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="ts.external.directory.path" value="D:\WebStorm 2019.2.4\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\WLADIMIR\Desktop\repos\PersonalManager\PersonalManager\client-react-app\resources\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\WLADIMIR\Desktop\repos\PersonalManager\client-react-app\src\issueModule\sagas" />
+      <recent name="C:\Users\WLADIMIR\Desktop\repos\PersonalManager\client-react-app\src\coreModule\components\Avatar" />
+      <recent name="C:\Users\WLADIMIR\Desktop\repos\PersonalManager\PersonalManager\client-react-app\src" />
+      <recent name="C:\Users\WLADIMIR\Desktop\repos\PersonalManager\PersonalManager\client-react-app" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7136666c-b7b9-43d6-ada7-5a5bff08b673" name="Default Changelist" comment="" />
+      <created>1619698430299</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619698430299</updated>
+      <workItem from="1619698438083" duration="1980000" />
+      <workItem from="1619700740959" duration="36000" />
+      <workItem from="1619701272524" duration="7954000" />
+      <workItem from="1620396344537" duration="5148000" />
+      <workItem from="1620673082083" duration="6569000" />
+      <workItem from="1621010874184" duration="5496000" />
+      <workItem from="1621019277386" duration="4503000" />
+      <workItem from="1621237484426" duration="28947000" />
+      <workItem from="1621367421387" duration="2038000" />
+      <workItem from="1621369596015" duration="423000" />
+      <workItem from="1621370126675" duration="1246000" />
+      <workItem from="1621371504254" duration="5445000" />
+      <workItem from="1622143618765" duration="28000" />
+      <workItem from="1622143670343" duration="131000" />
+      <workItem from="1622143878085" duration="199000" />
+      <workItem from="1622144576511" duration="89000" />
+      <workItem from="1622144686693" duration="305000" />
+      <workItem from="1622145179270" duration="9584000" />
+      <workItem from="1622567273722" duration="8435000" />
+      <workItem from="1622624765125" duration="29541000" />
+      <workItem from="1623833668359" duration="21078000" />
+      <workItem from="1624877469856" duration="6000" />
+      <workItem from="1624877515904" duration="7657000" />
+      <workItem from="1625481163230" duration="19343000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

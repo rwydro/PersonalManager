@@ -1,0 +1,14 @@
+.button {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+  :hover{
+    padding: 8px;
+    background: orange;
+    border-radius: 30%;
+    width: 60px;
+    height: 60px;
+  }
+}

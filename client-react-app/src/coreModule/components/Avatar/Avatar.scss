@@ -1,0 +1,14 @@
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:whitesmoke;
+  border-radius: 50%;
+  font-family: Rockwell;
+  font-size: large;
+  font-weight: bold;
+  color: #E91E63;
+  &--large {
+    height: 60px;
+  }
+}

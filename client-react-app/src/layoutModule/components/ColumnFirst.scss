@@ -1,0 +1,43 @@
+.column-first {
+  width: 120px;
+  height: 100%;
+  //background: linear-gradient( #66ffcc, #cc0099);
+  background: linear-gradient(to right,  #0dcaf0, #25798a);
+  //background: linear-gradient( #FF1744, #E91E63);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 16px;
+  border-color: whitesmoke;
+  color: whitesmoke;
+  &__first-part {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    height: 15%;
+  }
+  &__second-part {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    height: 100%;
+  }
+
+  &__tooltip{
+    background: #cccccc;
+  }
+  &__button{
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+    :hover{
+      padding: 8px;
+      background: orange;
+      border-radius: 30%;
+      width: 60px;
+      height: 60px;
+    }
+  }
+}
