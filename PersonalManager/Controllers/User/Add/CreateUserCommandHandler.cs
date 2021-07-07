@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using PersonalManager.Controllers.User.Add;
 using PersonalManager.Data;
 using PersonalManager.Exceptions;
 using PersonalManager.Infrastructure;
@@ -26,7 +27,12 @@ namespace PersonalManager.Controllers.User
             {
                 throw new UserExistException($"The login {command.Login} is occupied. Please enter another login");
             }
-            await dataContext.User.AddAsync(new Data.User(){Login = command.Login, Password = command.Password});
+            await dataContext.User.AddAsync(new Data.User()
+            {
+                Login = command.Login, Password = command.Password, 
+                DisplayName = command.DisplayName, Role = command.Role,
+                UserIdentifier = Guid.NewGuid()
+            });
             await dataContext.SaveChangesAsync();
             return new CreateUserCommandResult();
         }

@@ -13,7 +13,7 @@ namespace PersonalManager.Exceptions
         public AuthenticationFailedException(int status, string msg) : base(msg)
         {
             this.Status = status;
-            this.Name = "AuthenticationFailed";
+            this.Name = ExceptionsDictionary.AuthenticationFailed;
         }
     }
 }

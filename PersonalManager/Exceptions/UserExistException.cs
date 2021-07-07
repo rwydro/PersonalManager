@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace PersonalManager.Exceptions
 {
-    public class UserExistException:Exception
+    public class UserExistException:Exception, IExceptionBase
     {
-        private HttpStatusCode Status { get; }
+        public int Status { get; }
+        public string Name { get; }
+
         public UserExistException(string message):base(message)
         {
-            Status = HttpStatusCode.InternalServerError;
+            this.Status = 500;
+            this.Name = ExceptionsDictionary.UserExistException;
         }
     }
 }

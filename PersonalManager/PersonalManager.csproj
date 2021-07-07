@@ -8,6 +8,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ClientApp\**" />
+    <Content Remove="ClientApp\**" />
+    <EmbeddedResource Remove="ClientApp\**" />
+    <None Remove="ClientApp\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="client-react-app\.idea\inspectionProfiles\Project_Default.xml" />
+    <Content Include="client-react-app\.idea\misc.xml" />
+    <Content Include="client-react-app\.idea\modules.xml" />
+    <Content Include="client-react-app\.idea\vcs.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="client-react-app\.idea\client-react-app.iml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Castle.Windsor" Version="5.1.1" />
     <PackageReference Include="Castle.Windsor.MsDependencyInjection" Version="3.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.4" />

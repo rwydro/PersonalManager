@@ -5,6 +5,7 @@ using PersonalManager.Data;
 using PersonalManager.Exceptions;
 using PersonalManager.Infrastructure;
 using PersonalManager.Infrastructure.Enums;
+using PersonalManager.Infrastructure.Hubs;
 
 namespace PersonalManager.Controllers.Issues.Create
 {
@@ -12,10 +13,12 @@ namespace PersonalManager.Controllers.Issues.Create
     public class CreateIssueCommandCommandHandler : ICommandHandler<CreateIssueCommand, CreateIssueCommandResult>
     {
         private IDataContextProvider dataContextProvider;
+        private ITaskHub taskHub;
 
-        public CreateIssueCommandCommandHandler(IDataContextProvider dataContext)
+        public CreateIssueCommandCommandHandler(IDataContextProvider dataContext, ITaskHub taskHub)
         {
             this.dataContextProvider = dataContext;
+            this.taskHub = taskHub;
         }
 
 
@@ -41,6 +44,8 @@ namespace PersonalManager.Controllers.Issues.Create
                 State = IssueState.Open
             });
             await dataContext.SaveChangesAsync();
+            await taskHub.NotifyTaskCreated(command.IssueAuthorIdentifier.ToString(),
+                "The issue was created successfully");
             return new CreateIssueCommandResult();
         }
     }

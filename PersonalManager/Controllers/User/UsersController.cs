@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using PersonalManager.Controllers.User.Add;
 using PersonalManager.Controllers.User.Authenticate;
 using PersonalManager.Controllers.User.Get;
 using PersonalManager.Exceptions;
@@ -17,12 +18,14 @@ namespace PersonalManager.Controllers.User
     public class UsersController : ControllerBase
     {
         private readonly ICommandDispatcher dispatcher;
+        private readonly IQueryDispatcher queryDispatcher;
         private readonly ILogger<UsersController> logger;
 
-        public UsersController(ICommandDispatcher dispatcher, ILogger<UsersController> logger)
+        public UsersController(ICommandDispatcher dispatcher, ILogger<UsersController> logger, IQueryDispatcher queryDispatcher)
         {
             this.dispatcher = dispatcher;
             this.logger = logger;
+            this.queryDispatcher = queryDispatcher;
         }
 
         [HttpPost]
@@ -41,7 +44,7 @@ namespace PersonalManager.Controllers.User
         [HttpGet]
         public async Task<GetUsersResult> Get()
         {
-            return await dispatcher.Dispatch<GetUsersCommand, GetUsersResult>(new GetUsersCommand());
+            return  await dispatcher.Dispatch<GetUsersCommand, GetUsersResult>(new GetUsersCommand());
         }
 
         [HttpDelete]

@@ -22,6 +22,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using PersonalManager.Exceptions;
 using PersonalManager.Infrastructure;
+using PersonalManager.Infrastructure.Hubs;
 using Formatting = Newtonsoft.Json.Formatting;
 using Task = System.Threading.Tasks.Task;
 
@@ -64,7 +65,6 @@ namespace PersonalManager
                     policy.RequireAuthenticatedUser();
                 });
             });
-
         }
 
 
@@ -108,9 +108,10 @@ namespace PersonalManager
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
+                    name: "default",  
                     pattern: "{controller}/{action=Index}/{id?}"
                     );
+                endpoints.MapHub<TaskHub>("/taskHub");
             });
             InitializeDatabase(app).Wait();
         }
