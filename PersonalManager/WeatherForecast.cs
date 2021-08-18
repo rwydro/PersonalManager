@@ -13,3 +13,4 @@ namespace PersonalManager
         public string Summary { get; set; }
     }
 }
+
